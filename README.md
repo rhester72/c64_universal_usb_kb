@@ -8,11 +8,11 @@ MANY thanks to David Hover/homerghost from the MiSTer FPGA Forum for his helpful
 
 Framework adapted from https://github.com/venice1200/c64-keyboard-USB and https://github.com/omiq/c64-keyboard-USB
    
-Tested with Anykey 64 by T'Pau at https://github.com/T-Pau/Anykey and Keyboard-Test from NTS at https://csdb.dk/release/?id=98411
+Tested with [Anykey 64 by T'Pau](https://github.com/T-Pau/Anykey) and [Keyboard-Test by NTS](https://csdb.dk/release/?id=98411).
 
 This approach could be adapted with required changes for operation on Teensy, Leonardo, and similar Arduino devices but is unsupported by the author.
 
-THEORY OF OPERATION
+Theory of operation
 -------------------
 
 The 8x8 Commodore 64 keyboard matrix is read serially, with RESTORE read on keyboard pin 3. An 8x10 matrix is used in practice to simplify row and column math.
@@ -53,6 +53,7 @@ Code was deliberately created as large switch statements with predictive left me
 C64->ASCII mappings
 -------------------
 
+```
      ARROW LEFT           `
      (SHIFT) ARROW LEFT   ~
      (SHIFT) -            _
@@ -68,10 +69,12 @@ C64->ASCII mappings
      C=                   LEFT ALT
      (CTRL) CRSRUP        PAGE UP
      (CTRL) CRSRDN        PAGE DOWN
+```
 
 Connections (to Sparkfun Pro Micro or compatible)
 -------------------------------------------------
 
+```
     C64  |  Arduino  | Port
    ==========================
      20      2 - SDA    A7
@@ -94,12 +97,14 @@ Connections (to Sparkfun Pro Micro or compatible)
       3      1 - TX   RESTORE
       2     N/C         N/C
       1     GND         GND
+```
 
 Optionally, the Commodore 64 power LED may be connected to the Pro Micro for illumination when connected to USB. Connect the red wire from the LED in series with a 390 ohm (as standard, 180-470 ohms depending on desired brightness with lower values being brighter) resistor to Pro Micro pin 0 and the black wire to any available GND.
 
 Commodore 64 keyboard matrix layout
 -----------------------------------
 
+```
    A       10       16       14       21       18       19       20       15        1        0
 
       RC   C0       C1       C2       C3       C4       C5       C6       C7       C8       C9
@@ -112,5 +117,6 @@ Commodore 64 keyboard matrix layout
    7  R5   +        P        L        –        .        :        @        ,        [1]
    8  R6   £        *        ;        HOME     RSHIFT   =        ↑        /        RESTORE
    2  R7   1        ←        CTRL     2        SPCBAR   C=       Q        STOP     [1]
+```
 
    [1] As RESTORE is grounded and acts in original hardware as a switch, depressing it actually activates all rows for column 8 simultaneously. A software filter is used to reduce it to a single row.
