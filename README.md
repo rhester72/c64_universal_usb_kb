@@ -48,6 +48,8 @@ CAVEAT EMPTOR: The Arduino HID library takes (reasonable for its intent) liberti
 
 Please note that certain declared values for key equivalents are unused in code due to the Arduino HID function requirement that any non-printable key be referenced explicitly by macro and cannot be passed by variable.
 
+Code was deliberately created as large switch statements with predictive left member comparative operators to minimize cycle latency, achieving 400 matrix scans per second at 16Mhz (actual C64 hardware achieved 60 scans/second).
+
 C64->ASCII mappings
 -------------------
 
