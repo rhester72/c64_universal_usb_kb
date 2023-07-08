@@ -12,6 +12,13 @@ Tested with [Anykey 64 by T'Pau](https://github.com/T-Pau/Anykey) and [Keyboard-
 
 This approach could be adapted with required changes for operation on Teensy, Leonardo, and similar Arduino devices but is unsupported by the author.
 
+Releases
+--------
+
+Binary releases come in two flavors, -blink and -noblink. The former will flash an internal or external LED (as described in the documentation below) to indicate current keyboard target, the latter will illuminate an external LED but it will not flash (for C64 keyboard purists). -noblink has no effect whatsoever without an external LED attached.
+
+If you are familiar with hex flashing, you may flash the hex file directly, otherwise please load the sketch into the Arduino IDE (after installing the required HID library) and upload from there (be sure to select the proper 5V/16MHz Pro Micro configuraion or you will brick your device!). Also please note that the hex releases do NOT include bootloaders!
+
 Theory of operation
 -------------------
 
