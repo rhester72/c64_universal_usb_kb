@@ -27,10 +27,14 @@ VICE mapping is positional, which is NOT the software default.
 
 Special handlers are provided for convenience menus and keymap cycling:
 
-C=+F7        Opens convenience menu (on MiSTer and by default on BMC64), acts as (Left) Windows key in ASCII mode
-C=+F1        Cycle keymaps forward, wrapping around at the end. Keymap sequence is defined below.
-C=+SHIFT+F1  Cycle keymaps backward, wrapping around at the beginning.
-C=+CTRL+F1   Reset keymap to 1 regardless of prior setting
+C=+F7
+: Opens convenience menu (on MiSTer and by default on BMC64), acts as (Left) Windows key in ASCII mode
+C=+F1
+: Cycle keymaps forward, wrapping around at the end. Keymap sequence is defined in source under "Keymap definitions".
+C=+SHIFT+F1
+: Cycle keymaps backward, wrapping around at the beginning
+C=+CTRL+F1
+: Reset keymap to 1 regardless of prior setting
 
 Please note that ASCII mode requires the host operating system to support US keyboard mappings (only)!
 
@@ -38,7 +42,7 @@ VICE 2.x uses the same mappings as BMC64, which are different from those of VICE
 
 VICE and MiSTer C64 mode on C128 is not well supported due to differences in mapping across the emulators.
 
-If blink support has been enabled, either the internal RX/yellow LED or the external/keyboard LED (the latter being favored if available) will be used to communicate the current keymap setting via blinking one second after power-up and again upon changes. See CONNECTIONS below for details.
+If blink support has been enabled, either the internal RX/yellow LED or the external/keyboard LED (the latter being favored if available) will be used to communicate the current keymap setting via blinking one second after power-up and again upon changes. See Connections below for details.
 
 The currently selected map will be saved to EEPROM and restored each time the keyboard is plugged into USB until changed again. EEPROM will accept approximately 100,000 write cycles (or keyboard mapping changes) before failure.
 
