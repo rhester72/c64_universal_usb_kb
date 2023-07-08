@@ -27,14 +27,16 @@ VICE mapping is positional, which is NOT the software default.
 
 Special handlers are provided for convenience menus and keymap cycling:
 
-C=+F7
-: Opens convenience menu (on MiSTer and by default on BMC64), acts as (Left) Windows key in ASCII mode
-C=+F1
-: Cycle keymaps forward, wrapping around at the end. Keymap sequence is defined in source under "Keymap definitions".
-C=+SHIFT+F1
-: Cycle keymaps backward, wrapping around at the beginning
-C=+CTRL+F1
-: Reset keymap to 1 regardless of prior setting
+<dl>
+  <dt>C=+F7</dt>
+  <dd>Opens convenience menu (on MiSTer and by default on BMC64), acts as (Left) Windows key in ASCII mode</dd>
+  <dt>C=+F1</dt>
+  <dd>Cycle keymaps forward, wrapping around at the end. Keymap sequence is defined in source under "Keymap definitions".</dd>
+  <dt>C=+SHIFT+F1</dt>
+  <dd>Cycle keymaps backward, wrapping around at the beginning</dd>
+  <dt>C=+CTRL+F1</dt>
+  <dd>Reset keymap to 1 regardless of prior setting</dd>
+</dl>
 
 Please note that ASCII mode requires the host operating system to support US keyboard mappings (only)!
 
